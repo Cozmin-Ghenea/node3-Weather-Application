@@ -33,14 +33,14 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About page',
-        name: 'me'
+        name: 'Cozmin Ghenea'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help page',
-        name: 'also me'
+        name: 'Cozmin Ghenea '
     })
 })
 app.get('/weather', (req, res) => {
