@@ -52,13 +52,18 @@ app.get('/weather', (req, res) => {
         if (error) {
             return res.send({  error  })
         }
-        forecast(latitude, longitude, (error, forecastData) => {
+        forecast(latitude, longitude, (error, {Progrnoza,Temperatura,Precipitatii,Umiditate,Maxima,Minima}) => {
             if (error) {
                 return res.send({ error  })
             }
             res.send({
                 location: location,
-                forecastData: forecastData,
+                Progrnoza : Progrnoza,
+                Temperatura :Temperatura,
+                Precipitatii :Precipitatii,
+                Umiditate: Umiditate,
+                Maxima: Maxima,
+                Minima: Minima
             })
         })
     })

@@ -9,7 +9,15 @@ const force = (latitude,longitude,callback) => {
          } else if (body.error){
             callback(body.error,undefined)
           }else{
-            callback(undefined,body.daily.data[0].summary+", \n Temperatura : "+body.currently.temperature+", \n Probabilitate de ploaie : "+body.currently.precipProbability*100+"%, \n Umiditate: "+body.daily.data[0].humidity)
+            callback(undefined,{
+                                Progrnoza : body.daily.data[0].summary,
+                                Temperatura : body.currently.temperature,
+                                Precipitatii : body.daily.data[0].precipProbability*100,
+                                Umiditate: body.daily.data[0].humidity*100,
+                                Maxima: body.daily.data[0].temperatureHigh,
+                                Minima: body.daily.data[0].temperatureLow
+                                
+            })
             }
     });
 }
